@@ -11,10 +11,10 @@ public class Control : MonoBehaviour
     Vector3 tempPos, tempRot;
     float speed = 2f;
     float zed = 3.72f;
-    public float xMin = -0.6940987f;
-    public float xMax = 0.3849159f;
-    public float yMin = -0.5663472f;
-    public float yMax = 0.2940772f;
+    public float xMin = -3.95f;
+    public float xMax = 3.6f;
+    public float yMin = -2.75f;
+    public float yMax = 2.4f;
     public float tilt = 10f;
     public float yRotation = 0.0F;
     public float xRotation = 0.0F;
