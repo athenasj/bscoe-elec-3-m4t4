@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class WhenCollide : MonoBehaviour {
 
     // public GameObject explodeEffect;
@@ -23,10 +23,11 @@ public class WhenCollide : MonoBehaviour {
     {
         print(bump);
         bump++;
-        if (bump > 5)
+        if (bump > 3)
         {
             print(collide);
             transform.GetChild(0).gameObject.SetActive(true);
+            SceneManager.LoadScene("Level 0");
         }
         //Instantiate(explodeEffect, transform.position, transform.rotation);
         //print("word");
