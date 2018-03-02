@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,15 +23,22 @@ public class WhenCollide : MonoBehaviour {
     {
         print(bump);
         bump++;
-        if (bump > 3)
+        if (bump > 2)
         {
             print(collide);
             transform.GetChild(0).gameObject.SetActive(true);
-            SceneManager.LoadScene("Level 0");
+            Invoke("LoadGameScene", 1f);
+
+            
         }
         //Instantiate(explodeEffect, transform.position, transform.rotation);
         //print("word");
         //Destroy(other.gameObject);
     }
 
+
+    void LoadGameScene()
+    {
+        SceneManager.LoadScene("Level 0");
+    }
 }
