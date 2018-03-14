@@ -8,7 +8,9 @@ public class nomorecube : MonoBehaviour {
     public GameObject explosive;
     public GameObject prevGameO;
     public Text scoreText;
+    public Text enemyText;
     public AudioSource explode;
+    int showEnHealth = 3;
     
 
     int score = 0;
@@ -41,6 +43,23 @@ public class nomorecube : MonoBehaviour {
             print("boomboom");
             print(other);
             print (sameShip);
+            switch (sameShip) { 
+                case 0:
+                    showEnHealth = 3;
+                    break;
+                case 1:
+                    showEnHealth = 2;
+                    break;
+                case 2:
+                    showEnHealth = 1;
+                    break;
+                case 3:
+                    showEnHealth = 0;
+                    break;
+            }
+
+
+            enemyText.text = "Enemy Health: " + showEnHealth;
 
             if (sameShip > 2)
             //instantiate explosion
