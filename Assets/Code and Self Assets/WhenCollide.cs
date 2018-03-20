@@ -27,6 +27,7 @@ public class WhenCollide : MonoBehaviour {
     
     public void OnTriggerEnter(Collider collide)
     {
+        
         health.text = "Health: " + healthval;
         print(bump);
         bump++;
