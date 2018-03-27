@@ -13,8 +13,13 @@ public class nomorecube : MonoBehaviour {
     
 
     public static int score = 0;
-    
-	void Update () {
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update () {
         scoreText.text = "Score: " + score.ToString();
     }
 }

@@ -45,7 +45,7 @@ public class BulletHit : MonoBehaviour {
                 Instantiate(explosive, transform.position, transform.rotation);
                 Destroy(gameObject);
                 explode.Play();
-                nomorecube.score += ScoreVal;
+                nomorecube.score += ScoreVal; //pass value to nomorecubecs
                 //gameObject.BroadcastMessage("IncreaseScore", ScoreVal);
             }
         }
