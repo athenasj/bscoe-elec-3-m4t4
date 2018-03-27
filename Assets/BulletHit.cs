@@ -27,25 +27,28 @@ public class BulletHit : MonoBehaviour {
         }
         ScoreVal = EnemyLife;
     }
-	
+
 
     //when particle hits
     void OnParticleCollision(GameObject other)
     {
-        print("bomobomo");
-        EnemyLife--;
-        enemyText.text = "Current Enemy Health: " + EnemyLife;
-
-        if (EnemyLife == 0)
-        //instantiate explosion
+        if (other.tag == "Player") //to make sure that only kalaban particles kill other kalaban
         {
-            Instantiate(explosive, transform.position, transform.rotation);
-            Destroy(gameObject);
-            explode.Play();
-            nomorecube.score += ScoreVal;
-            //gameObject.BroadcastMessage("IncreaseScore", ScoreVal);
-        }
+            print("bomobomo");
+            print("other:" + other.tag);
+            EnemyLife--;
+            enemyText.text = "Current Enemy Health: " + EnemyLife;
 
+            if (EnemyLife == 0)
+            //instantiate explosion
+            {
+                Instantiate(explosive, transform.position, transform.rotation);
+                Destroy(gameObject);
+                explode.Play();
+                nomorecube.score += ScoreVal;
+                //gameObject.BroadcastMessage("IncreaseScore", ScoreVal);
+            }
+        }
     }
     
 }
